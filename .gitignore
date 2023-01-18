@@ -1,8 +1,8 @@
 /158A.exe
 /LongWords.exe
 /watermelon.exe
-/.bin
-/.exe
-/.txt
-/.dYSM
+*.bin
+*.exe
+*.txt
+*.dYSM
 **/.cph/**
