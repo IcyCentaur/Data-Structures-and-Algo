@@ -1,17 +1,23 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
- 
-void towerOfHanoi(int n, char from_rod, char to_rod, char aux_rod){
-    if (n == 0) {
-        return;
+long long int moves = 0;
+long long int towerOfHanoi(int n, char a, char b, char c){
+    
+    if(n == 1) {
+        cout<<"Moving disc 1 from "<<a<<" to "<<c<<endl;
+        moves += 1;
+        return moves;
     }
-    towerOfHanoi(n - 1, from_rod, aux_rod, to_rod);
-    cout << "Move disk " << n << " from rod " << from_rod
-         << " to rod " << to_rod << endl;
-    towerOfHanoi(n - 1, aux_rod, to_rod, from_rod);
+    towerOfHanoi(n-1, a, c, b);
+    cout<<"Moving disc "<<n<<" from "<<a<<" to "<<c<<endl;   
+    moves++;
+    towerOfHanoi(n-1, b, a, c); 
+    return moves;
 }
+
 int main(){
-    int N = 3;
-    towerOfHanoi(N, 'A', 'C', 'B');
+    cout<<towerOfHanoi(3, '1', '2', '3');
+    //cout<<"Total moves = "<<moves;
     return 0;
+
 }
