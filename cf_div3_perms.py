@@ -19,6 +19,9 @@ def solve(f, inp):
     if(sum(lst) == sum(left)):
        print("YES")
        return
+  if(left == []):
+    print("YES")
+    return
   print("NO")
   return
 
